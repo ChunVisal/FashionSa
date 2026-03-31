@@ -4,22 +4,17 @@ import B from "../assets/B.jpg";
 import C from "../assets/C.jpg";
 import D from "../assets/D.jpg";
 
-
-const HERO_IMAGES = [
-  A,B,C,D
-];
+const HERO_IMAGES = [A, B, C, D];
 
 export default function Hero() {
   const [isReady, setIsReady] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Initial trigger for entrance animations
   useEffect(() => {
     const timer = setTimeout(() => setIsReady(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
-  // Image Loop logic: Changes every 5 seconds
   useEffect(() => {
     const loop = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
@@ -28,7 +23,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full bg-[#0a0a0af4] overflow-hidden">
+    <div className="relative h-[70vh] sm:h-[80vh] md:h-screen w-full bg-[#0a0a0af4] overflow-hidden">
+      {/* 1. MOODY IMAGE LOOP LAYER */}
       {/* 1. MOODY IMAGE LOOP LAYER */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((img, index) => (
@@ -36,30 +32,32 @@ export default function Hero() {
             key={index}
             className={`absolute inset-0 bg-cover bg-center transition-all duration-[3000ms] ease-in-out ${
               index === currentIndex
-                ? "opacity-60 scale-100"
+                ? "opacity-100 scale-100"
                 : "opacity-0 scale-110"
-            }`}
+            } mobile-bg-position`}
             style={{
               backgroundImage: `url('${img}')`,
-              filter: "brightness(0.6) contrast(1) saturate(0.4)",
+              filter: "brightness(0.5) contrast(1.1)",
             }}
           />
         ))}
 
-        {/* The "Dark Vibe" Overlays */}
-        <div className="absolute inset-0 z-1" />
-        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-transparent to-black/40 z-2" />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40 z-1" />
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-black/40 z-2" />
 
         {/* Grain Texture Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-[3] pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay z-[3] pointer-events-none" />
       </div>
 
       {/* 2. THE STROBE CONTENT */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-10 lg:px-24">
+      <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-24">
         <div className="max-w-4xl">
           {/* Small Label */}
           <p
-            className={`text-[10px] tracking-[1em] text-white/40 uppercase mb-1 transition-all duration-1000 delay-300 ${
+            className={`text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.6em] sm:tracking-[0.8em] md:tracking-[1em] text-white/60 uppercase mb-2 sm:mb-3 transition-all duration-1000 delay-300 ${
               isReady
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 -translate-x-10"
@@ -70,47 +68,40 @@ export default function Hero() {
 
           {/* Main Title */}
           <h1
-            className={`text-white text-6xl md:text-[9rem] font-black uppercase leading-[0.8] tracking-tighter transition-all duration-1000 delay-500 ${
+            className={`text-white text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] font-black uppercase leading-[0.9] sm:leading-[0.85] tracking-tighter transition-all duration-1000 delay-500 ${
               isReady
                 ? "opacity-100 scale-100 blur-0"
                 : "opacity-0 scale-110 blur-md"
             }`}
           >
             Aura <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/80 via-white/20 to-transparent italic font-serif tracking-tight lg:-ml-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/80 via-white/20 to-transparent italic font-serif tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-[9rem]">
               SASA
             </span>
           </h1>
 
           {/* Minimal Description */}
           <p
-            className={`mt-10 max-w-sm text-white/30 text-xs tracking-widest leading-relaxed uppercase transition-opacity duration-1000 delay-700 ${
+            className={`mt-6 sm:mt-8 md:mt-10 max-w-xs sm:max-w-sm text-white/40 text-[10px] sm:text-xs tracking-wider sm:tracking-widest leading-relaxed uppercase transition-opacity duration-1000 delay-700 ${
               isReady ? "opacity-100" : "opacity-0"
             }`}
           >
-            A digital exploration of texture, movement, and the beauty found in
-            the dark.
+            A digital exploration of texture, movement, <br /> and the beauty
+            found in the dark.
           </p>
         </div>
 
-        {/* 3. INTERACTIVE PROGRESS & CTA */}
-        <div className="absolute bottom-34 left-10 lg:left-24 right-10 lg:right-24 flex items-end justify-between">
+        {/* 3. CTA BUTTON */}
+        <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 lg:bottom-20 left-6 sm:left-8 md:left-10 lg:left-24">
           <div
-            className={`flex flex-col gap-8 transition-all duration-1000 delay-1000 ${isReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`flex flex-col gap-6 sm:gap-8 transition-all duration-1000 delay-1000 ${isReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            {/* CTA Button */}
-            <button className="group flex items-center gap-4 text-white">
-              <span className="text-[10px] tracking-[0.4em] uppercase font-bold group-hover:tracking-[0.6em] transition-all">
+            <button className="group flex items-center gap-3 sm:gap-4 text-white">
+              <span className="text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase font-bold group-hover:tracking-[0.5em] sm:group-hover:tracking-[0.6em] transition-all">
                 Start Show
               </span>
-              <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-white transition-all duration-500" />
+              <div className="w-8 sm:w-10 md:w-12 h-px bg-white/40 group-hover:w-12 sm:group-hover:w-16 md:group-hover:w-20 group-hover:bg-white transition-all duration-500" />
             </button>
-          </div>
-
-          <div className="hidden md:block text-right">
-            <span className="text-[9px] tracking-[0.8em] text-white/20 uppercase vertical-text animate-pulse">
-              Scroll to Discover
-            </span>
           </div>
         </div>
       </div>
@@ -118,7 +109,11 @@ export default function Hero() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-            .vertical-text { writing-mode: vertical-rl; }
+          @media (max-width: 768px) {
+      .mobile-bg-position {
+        background-position: 62% center !important;
+      }
+    },
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:italic@1&display=swap');
             .font-serif { font-family: 'Playfair Display', serif; }
           `,
