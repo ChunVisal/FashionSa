@@ -73,7 +73,7 @@ export default function Category() {
       {/* 1. CENTERED TITLES */}
       <div className="relative z-10 text-center  mb-16 px-6">
         <h2
-          className="text-white text-[3.2rem] md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
+          className="text-white text-[2rem] md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
           style={{
             textShadow: `
       /* Default stroke (outline effect) */
