@@ -3,6 +3,7 @@ import creative from "../assets/courses/creative.png";
 import visual from "../assets/courses/visual.png";
 import branding from "../assets/courses/branding.png";
 import production from "../assets/courses/production.png";
+import designer from "../assets/designer.JPG";
 
 const COURSES = [
   {
@@ -30,11 +31,10 @@ const COURSES = [
     image: production,
   },
   {
-    title: "Textile Design",
+    title: "Designer",
     tag: "Artisan",
     size: "small",
-    image:
-      "https://images.unsplash.com/photo-1528459801416-a7e99a0dce3a?q=80&w=2000",
+    image: designer,
   },
 ];
 
@@ -61,7 +61,7 @@ export default function FashionCourse() {
       </div>
 
       {/* 2. MASONRY BOOK GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[280px] sm:auto-rows-[320px] md:auto-rows-[380px] lg:auto-rows-[420px] xl:auto-rows-[480px] gap-3 md:gap-4 lg:gap-5 xl:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[270px] sm:auto-rows-[320px] md:auto-rows-[380px] lg:auto-rows-[420px] xl:auto-rows-[480px] gap-3 md:gap-4 lg:gap-5 xl:gap-6">
         {COURSES.map((course, index) => (
           <div
             key={index}
@@ -76,7 +76,7 @@ export default function FashionCourse() {
             {/* Image Layer - Full responsive with perfect sizing */}
             <div className="absolute inset-0 flex items-center justify-center bg-[#111]">
               <img
-                src={course.image}
+              src={course.image}
                 alt={course.title}
                 className="w-full h-full object-contain"
                 style={{

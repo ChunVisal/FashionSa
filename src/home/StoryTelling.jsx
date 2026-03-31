@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-
 const STORIES = [
   {
     id: "creative",
@@ -93,7 +92,7 @@ export default function HorizontalStorytelling() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full bg-black overflow-hidden">
+    <section className="relative sm:h-screen h-130 w-full bg-black overflow-hidden">
       {/* Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-[#050505]"
@@ -376,4 +375,3 @@ function SlideContent({ story, index }) {
     </div>
   );
 }
-

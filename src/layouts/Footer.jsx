@@ -38,9 +38,9 @@ export default function Footer() {
       </div>
 
       {/* 3. THE NAVIGATION (Bottom Strip) */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-between items-end gap-10">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center sm:items-end gap-10">
         {/* Simple List - No spacing width issues */}
-        <nav className="flex flex-wrap gap-x-10 gap-y-4">
+        <nav className="flex flex-wrap gap-x-10 gap-y-4 mt-3">
           {["Home", "+855 887 941 543", "raksasam371@gmail.com"].map((link) => (
             <a
               key={link}
@@ -54,12 +54,12 @@ export default function Footer() {
 
         {/* Social & Meta */}
         <div className="flex flex-col items-end gap-2 text-right">
-          <div className="flex gap-6 mb-2">
+          <div className="flex md:gap-6 gap-2 mb-2">
             <a
               href="https://t.me/Raksaso"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
+              className="px-3 py-1.5 bg-gray-200/20 rounded-lg text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
             >
               Telegram
             </a>
@@ -67,7 +67,7 @@ export default function Footer() {
               href="https://www.tiktok.com/@raksaa29"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
+              className="px-3 py-1.5 bg-gray-200/20 rounded-lg text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
             >
               TikTok
             </a>
@@ -75,7 +75,7 @@ export default function Footer() {
               href="https://www.facebook.com/share/14bYCcxB1L2/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
+              className="px-3 py-1.5 bg-gray-200/20 rounded-lg text-[9px] tracking-[0.4em] text-white/30 hover:text-white uppercase"
             >
               Facebook
             </a>
