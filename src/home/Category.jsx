@@ -66,11 +66,14 @@ export default function Category() {
   };
 
   return (
-    <section id="collection" className="w-full py-5 overflow-hidden select-none relative bg-linear-to-t from-[#0a0a0a] to-[#1a1a1a]">
+    <section
+      id="collection"
+      className="w-full py-5 overflow-hidden select-none relative bg-linear-to-t from-[#0a0a0a] to-[#1a1a1a]"
+    >
       {/* 1. CENTERED TITLES */}
       <div className="relative z-10 text-center  mb-16 px-6">
         <h2
-          className="text-white text-6xl md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
+          className="text-white text-[3.2rem] md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
           style={{
             textShadow: `
       /* Default stroke (outline effect) */
