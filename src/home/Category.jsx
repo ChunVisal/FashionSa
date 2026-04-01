@@ -73,7 +73,7 @@ export default function Category() {
       {/* 1. CENTERED TITLES */}
       <div className="relative z-10 text-center  mb-16 px-6">
         <h2
-          className="text-white text-[2rem] md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
+          className="text-white text-[2.3rem] md:text-9xl font-black tracking-[0.0.6rem] uppercase leading-none"
           style={{
             textShadow: `
       /* Default stroke (outline effect) */
@@ -112,14 +112,14 @@ export default function Category() {
         {/* Navigation Buttons */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-10 top-1/2 -translate-y-1/2 z-30 bg-black/50 backdrop-blur-md text-white p-6 border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black"
+          className="absolute left-10 top-1/2 -translate-y-1/2 z-30 bg-black/50 backdrop-blur-md text-white p-6 border border-white/10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black"
         >
           <span className="text-xs uppercase tracking-[0.3em]">Prev</span>
         </button>
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-10 top-1/2 -translate-y-1/2 z-30 bg-black/50 backdrop-blur-md text-white p-6 border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black"
+          className="absolute right-10 top-1/2 -translate-y-1/2 z-30 bg-black/50 backdrop-blur-md text-white p-6 border border-white/10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black"
         >
           <span className="text-xs uppercase tracking-[0.3em]">Next</span>
         </button>

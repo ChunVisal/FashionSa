@@ -25,7 +25,6 @@ export default function Hero() {
   return (
     <div className="relative h-[70vh] sm:h-[80vh] md:h-screen w-full bg-[#0a0a0af4] overflow-hidden">
       {/* 1. MOODY IMAGE LOOP LAYER */}
-      {/* 1. MOODY IMAGE LOOP LAYER */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((img, index) => (
           <div
@@ -37,7 +36,7 @@ export default function Hero() {
             } mobile-bg-position`}
             style={{
               backgroundImage: `url('${img}')`,
-              filter: "brightness(0.5) contrast(1.1)",
+              filter: "brightness(0.7) contrast(1.1)",
             }}
           />
         ))}
@@ -92,7 +91,7 @@ export default function Hero() {
         </div>
 
         {/* 3. CTA BUTTON */}
-        <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 lg:bottom-20 left-6 sm:left-8 md:left-10 lg:left-24">
+        <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-6 sm:left-8 md:left-10 lg:left-24">
           <div
             className={`flex flex-col gap-6 sm:gap-8 transition-all duration-1000 delay-1000 ${isReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
